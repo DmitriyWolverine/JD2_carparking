@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-init-method="init" default-destroy-method="destroy">
+	
+	<bean id="carDBase" class="by.htp.carparking.dao.impl.CarDaoDBImpl">
+		
+	</bean>
+
+	<bean id="orderDBase" class="by.htp.carparking.dao.impl.OrderDaoDBImpl">
+		
+	</bean>
+	
+	<bean id="carService" class="by.htp.carparking.service.impl.CarServiceImpl">
+		<constructor-arg ref="carDBase" />
+	</bean>
+
+	<bean id="orderService" class="by.htp.carparking.service.impl.OrderServiceImpl">
+		
+	</bean>
+	
+	<bean id="show_cars" class="by.htp.carparking.commands.impl.ShowCarsList">
+		<constructor-arg ref="carService" />
+	</bean>
+</beans>
+
+

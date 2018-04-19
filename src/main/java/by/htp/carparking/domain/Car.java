@@ -15,7 +15,7 @@ public class Car extends Entity{
 		super(id);
 	}
 	
-	public Car(int id, String model, String brand) {
+	public Car(int id, String brand, String model) {
 		super(id);
 		this.model = model;
 		this.brand = brand;
@@ -68,7 +68,7 @@ public class Car extends Entity{
 	
 	@Override
 	public String toString() {
-		return "Car [model=" + model + ", brand=" + brand + ", getId()=" + getId() + "]";
+		return "Car Id = " + getId() +", brand=" + brand +  ", model=" + model ;
 	}
 	
 }

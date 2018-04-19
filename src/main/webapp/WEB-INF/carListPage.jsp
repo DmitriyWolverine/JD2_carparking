@@ -9,7 +9,23 @@
 <body>
 	<p>CARS LIST!</p>
 	<c:forEach items="${list}" var="item">
-		<p><c:out value="${item}"/></p>
+		<p><c:out value="${item}"/>
+		<form action="MainServlet" method="post">
+			<input type="hidden" name="command" value="to_book_car"/>
+			<input type="hidden" name="id" value="${item.getId()}"/>
+			<input type="submit" value="Book"/>
+		</form>
+		</p>
+		<form action="MainServlet" method="post">
+			<input type="hidden" name="command" value="to_update_car"/>
+			<input type="hidden" name="id" value="${item.getId()}"/>
+			<input type="submit" value="Update"/>
+		</form>
+		<form action="MainServlet" method="post">
+			<input type="hidden" name="command" value="delete_car"/>
+			<input type="hidden" name="id" value="${item.getId()}"/>
+			<input type="submit" value="Delete"/>
+		</form>
 	</c:forEach> 
 </body>
 </html>
